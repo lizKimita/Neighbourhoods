@@ -4,15 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from .forms import NewPostForm, NewBusinessForm, NewProfileForm
-
+from .models import Profile, Businesses, Posts
 
 # Create your views here.
 
 def home(request):
-
+    current_user = request.user
+    posts = Posts.get_posts()
     title = "Neighborhoods"
 
-    return render(request,'everything/home.html', {"title":title})
+    return render(request,'everything/home.html', {"title":title, "posts":posts})
 
 
 @login_required(login_url='/accounts/login/')

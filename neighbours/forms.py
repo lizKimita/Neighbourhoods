@@ -1,15 +1,15 @@
 from django import forms
-from .models import Businesses, Posts, User, NeighbourHood
+from .models import Businesses, Posts, Profile, NeighbourHood
 
 class NewPostForm(forms.ModelForm):
     class Meta:
         model = Posts
-        exclude = ['editor','pub_date', 'poster_id']
+        exclude = ['profile','pub_date', 'poster_id']
 
 
 class NewProfileForm(forms.ModelForm):
     class Meta:
-        model = User
+        model = Profile
         exclude = ['user', 'userId']
         widgets = {
     'neighbourhood': forms.CheckboxInput(),
