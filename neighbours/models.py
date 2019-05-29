@@ -31,7 +31,7 @@ class Businesses(models.Model):
 class Posts(models.Model):
     title = models.CharField(max_length = 60)
     post = models.TextField(blank= True)
-    editor = models.ForeignKey(User,on_delete=models.CASCADE)
+    profile = models.ForeignKey(User,on_delete=models.CASCADE)
     pub_date = models.DateField(auto_now_add=True)
     poster_id = models.IntegerField(default=0)
 
