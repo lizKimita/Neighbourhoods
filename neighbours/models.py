@@ -42,9 +42,36 @@ class Profile(models.Model):
 
 class Businesses(models.Model):
     business_name = models.CharField(max_length = 150)
+    business_description = models.TextField(blank= True)
+    contact_person = models.CharField(max_length = 150)
     user = models.ForeignKey(User,on_delete = models.CASCADE,null = True)
     neighbourhood_id = models.ForeignKey(NeighbourHood,on_delete = models.CASCADE,null = True)
     business_email = models.EmailField()
+
+
+    def save_business(self):
+        self.save()
+
+    def delete_business(self):
+        Businesses.objects.filter().delete()
+    
+    @classmethod
+    def get_businesses(cls):
+        businesses = Businesses.objects.all()
+        return businesses
+
+    @classmethod
+    def get_business(cls, post_id):
+        single_business = cls.objects.get(id=post_id)
+        return single_business
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        business = cls.objects.filter(title__icontains=search_term)
+        return business
+
+    class Meta:
+        ordering = ['-id']
 
 class Posts(models.Model):
     title = models.CharField(max_length = 60)

@@ -9,6 +9,8 @@ urlpatterns=[
     url(r'^profile/$',views.profile,name = 'NewProfile'),
     url(r'^new_profile/$',views.new_profile,name = 'new_profile'),
     url(r'^edit_profile/$',views.edit_profile,name = 'edit_profile'),
+    url(r'^businesses/$',views.businesses,name = 'businesses'),
+    url(r'^new_business/$',views.new_business,name = 'new_business'),
 
 ]
 
