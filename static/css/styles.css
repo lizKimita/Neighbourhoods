@@ -9,3 +9,25 @@
     text-align: center;
 
 }
+.profilepic{
+    border-radius: 50%;
+    max-width: 80%;
+    width: 80%;
+    height: 80%;
+    margin-left: 30%;
+}
+.newdata{
+    text-align: center;
+    font-size: 250%;
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Acme', sans-serif; */
+    /* font-family: 'Satisfy', cursive; */
+    /* font-family: 'Courgette', cursive; */
+    /* font-family: 'Kaushan Script', cursive; */
+    font-family: 'Great Vibes', cursive;
+    /* font-family: 'Cookie', cursive;
+    font-family: 'Merienda', cursive;
+    font-family: 'Marck Script', cursive;
+    font-family: 'Gochi Hand', cursive;
+    font-family: 'Yellowtail', cursive; */
+}

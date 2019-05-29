@@ -66,8 +66,8 @@ class Businesses(models.Model):
         return single_business
 
     @classmethod
-    def search_by_title(cls,search_term):
-        business = cls.objects.filter(title__icontains=search_term)
+    def search_by_business_name(cls,search_term):
+        business = cls.objects.filter(business_name__icontains=search_term)
         return business
 
     class Meta:

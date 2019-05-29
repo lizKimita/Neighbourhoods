@@ -1,0 +1,24 @@
+{%extends 'everything/base.html'%} 
+{% block content %}
+<div class="container" style="padding-top:8%">
+    <div class="jumbotron">
+  <div class="row">
+    {% if businesses%}
+      <h2 style="text-decoration:underline">Found {{ businesses|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 projects for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  {% if businesses %}
+    {% for business in businesses %}
+    
+    <h3> <a href="">{{business.business_name}}</a> </h3>
+
+    {% endfor %}
+  {% endif %}
+  
+</div>
+</div>
+{% endblock %}

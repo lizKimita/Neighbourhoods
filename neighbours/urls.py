@@ -11,6 +11,7 @@ urlpatterns=[
     url(r'^edit_profile/$',views.edit_profile,name = 'edit_profile'),
     url(r'^businesses/$',views.businesses,name = 'businesses'),
     url(r'^new_business/$',views.new_business,name = 'new_business'),
+    url(r'^search/', views.search_results, name='search_results'),
 
 ]
 
