@@ -1,1 +1,22 @@
 from django import forms
+from .models import Businesses, Posts, User, NeighbourHood
+
+class NewPostForm(forms.ModelForm):
+    class Meta:
+        model = Posts
+        exclude = ['editor','pub_date', 'poster_id']
+
+
+class NewProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        exclude = ['user', 'userId']
+        widgets = {
+    'neighbourhood': forms.CheckboxInput(),
+}
+
+
+class NewBusinessForm(forms.ModelForm):
+    class Meta:
+        model = Businesses
+        exclude = ['user', 'neighbourhood_id']
