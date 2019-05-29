@@ -1,0 +1,37 @@
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+<div class="container">
+    <!-- Empty div -->
+    <div class="imglogin" style="padding-top: 5ch">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlBysJfCrVHzScG_Ml2OaaSJrtI9ujxncMzUE8jztJ26tU0la4KQ" alt="">
+    </div>
+    <div class="row">
+        <div style="padding-top:5ch; width: 50%;margin: auto;">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <h3 class="neiba">Neighbourhoods</h3>
+          <form  action="/accounts/login/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+
+            <div class="form-group">
+              <a href="{%url 'home'%}"><input type="submit" class="btn btn-info" value="Login"></a>
+            </div>
+          </div>
+        </div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <small class="muted">
+                Don't have an account?<a style="font-size:15px;" href="/accounts/register"> Sign Up Here</a>
+            </small>
+            <input type="hidden" name="next" value="{{next}}">
+          </div>
+          </form>
+        </div>
+    </div>
+    <!-- empty div -->
+  </div>
+</div>
+
+{% endblock %}
