@@ -19,6 +19,24 @@ class Profile(models.Model):
     userId =models.IntegerField(default = 0)
     user_email = models.EmailField()
 
+
+    def save_profile(self):
+        self.save()
+
+    def delete_profile(self):
+        self.delete()   
+
+
+    @classmethod
+    def find_user(cls, profile_id):
+        profile = cls.objects.get(id=profile_id)
+        return profile
+
+    @classmethod
+    def update_profile(cls,profile,update):
+         updated = cls.objects.filter(Image_name=profile).update(name=update)
+         return updated
+
     def __str__(self):
         return self.full_name
 
