@@ -1,0 +1,79 @@
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-fixed-top navbar-dark stylish-color">
+    <div class="container">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+           <a href=""><i class="fas fa-home"></i></a> 
+          </li>
+        </ul>
+      <a class="navbar-brand awards" style="color:white; margin-left: .8%" href="/">Neighborhoods</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <form class="form-inline mr-auto" role="search" action="">
+                <div class="md-form my-0">
+                  <input class="form-control" type="text" placeholder="Search for Businesses" aria-label="Search" name= "businesses">
+                 <!-- <button type="submit" id = "btnsearch"><i class="fas fa-search text-black ml-3" aria-hidden="true"></i></button>  -->
+                </div>
+              </form>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        </div>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="dropdown">
+              <a class="navbar-brand" style="color:black" href="" data-toggle="dropdown" role="button"></i>Businesses</a>
+          <ul class="dropdown-menu" role="menu">
+          <li>
+            <a style="font-size:15px;" href=""></a>
+          </li>
+          <li>
+            <a style="font-size:15px;" href=""></a>
+          </li>
+
+          </ul>
+        </li>
+          
+              {% if user.is_authenticated %}
+                <li class="dropdown">
+                        <a class="nav-link" href="" data-toggle="dropdown" role="button"><img src="https://image.flaticon.com/icons/png/128/118/118781.png" alt="" style="width:30px;height:30px;"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a style="font-size:15px;" href="">Profile</a>
+                    </li>
+                    <li>
+                      <a style="font-size:15px;" href="/">Activity</a>
+                    </li>
+                    <li>
+                      <a style="font-size:15px;" href="/">Collections</a>
+                    </li>
+                    <li>
+                      <a style="font-size:15px;" href="/">Notifications</a>
+                    </li>
+                    <li>
+                        <a style="font-size:15px;" href="/">Settings</a>
+                    </li>
+
+                    <li>
+                      <a style="font-size:15px;" href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                </li>
+              
+              {% else %}
+              <li>
+                <a style="font-size:15px;" class='btn' href="/accounts/login">REGISTER/LOGIN</a>
+              </li>
+
+              {% endif %}
+              <li style="padding-left:10%" >
+                <a style="font-size:15px;font-weight: 600" class='btn btn-default' href="">SUBMIT A POST</a>
+            </li>
+            
+        </ul>
+      </div>
+  
+      </div>
+    </nav>
+  
