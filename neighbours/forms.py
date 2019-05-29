@@ -11,9 +11,6 @@ class NewProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ['user', 'userId']
-        widgets = {
-    'neighbourhood': forms.CheckboxInput(),
-}
 
 
 class NewBusinessForm(forms.ModelForm):
