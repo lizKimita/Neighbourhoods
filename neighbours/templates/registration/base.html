@@ -5,18 +5,22 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     {% if title %}
     <title>{{title}}</title>
     {% else %}
-    <title> Neighbourhoods </title>
+    <title> Neighborhoods </title>
     {% endif %}
 
     {% block styles %}
 
     <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Kalam|Kaushan+Script|Lobster|Lobster+Two|Pacifico|Permanent+Marker|Satisfy&display=swap" rel="stylesheet">
+    <link rel="icon" href="">
     <link href="https://fonts.googleapis.com/css?family=Acme|Cookie|Courgette|Gochi+Hand|Great+Vibes|Kaushan+Script|Marck+Script|Merienda|Pacifico|Satisfy|Yellowtail&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/styles.css">
+  
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -28,6 +32,8 @@
 </head>
 
 <body>
+    {% include "navbar.html" %}
+   
 
     {% if messages%}
 
@@ -38,8 +44,9 @@
         {%endfor%}
 
     {% endif %}
+    
     {% block content %}
-
+    
     {%endblock%}
     <br>
 

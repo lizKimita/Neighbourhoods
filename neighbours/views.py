@@ -9,15 +9,16 @@ from .models import Profile, Businesses, Posts
 # Create your views here.
 
 def home(request):
-    current_user = request.user
-
     try:
-        profile = Profile.objects.filter(user=request.user)
+        profile = Profile.objects.filter(user_id=request.user.id)
         arr = []
         for new in profile:
             arr.append(new.neighbourhood.id)
-        id = arr[0]
-        posts=Posts.objects.filter(neighbourhood=id)
+        if len(arr)>0:
+            id = arr[0]
+            posts=Posts.objects.filter(neighbourhood=id)
+        else:
+            posts=Posts.objects.filter(neighbourhood=10000000000)
     except Exception as e:
         raise Http404()
     

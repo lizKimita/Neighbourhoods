@@ -1,15 +1,16 @@
 
 <nav class="navbar sticky-top navbar-expand-lg navbar-fixed-top navbar-dark stylish-color">
-    <div class="container">
+    <div class="container-fluid">
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-           <a href="/"><i class="fas fa-home"></i></a> 
+          <li class="nav-item active" style="margin-right:19%">
+            <a href="/"><i class="fas fa-home"></i></a> 
           </li>
-        </ul>
-      <a class="navbar-brand awards" style="color:white; margin-left: .8%" href="/">Neighborhoods</a>
+      </ul>
+      <a class="navbar-brand headstyle" style="color:white; margin-left: .8%; font-size: 230%" href="/">Neighborhoods</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form class="form-inline mr-auto" role="search" action="{% url 'search_results' %}">
           <div class="md-form my-0">
@@ -23,13 +24,13 @@
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="dropdown">
-              <a class="navbar-brand" style="color:black" href="" data-toggle="dropdown" role="button"></i>Businesses</a>
+              <a class="navbar-brand" style="color:white" href="" data-toggle="dropdown" role="button"></i>Businesses</a>
           <ul class="dropdown-menu" role="menu">
           <li>
             <a style="font-size:15px;" href="{%url 'new_business'%}"> List A Business </a>
           </li>
           <li>
-            <a style="font-size:15px;" href="{%url 'businesses'%}"> Neighbourhood Businesses</a>
+            <a style="font-size:15px;" href="{%url 'businesses'%}"> NeighbourhoodBusinesses</a>
           </li>
 
           </ul>
@@ -54,7 +55,7 @@
 
               {% endif %}
               <li style="padding-left:10%" >
-                <a style="font-size:15px;font-weight: 600" class='btn btn-default' href="{%url 'new-post'%}">SUBMIT A POST</a>
+                <a style="font-size:10px;font-weight: 600" class='btn btn-default' href="{%url 'new-post'%}">SUBMIT A POST</a>
             </li>
             
         </ul>
