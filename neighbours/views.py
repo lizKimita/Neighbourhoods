@@ -10,11 +10,18 @@ from .models import Profile, Businesses, Posts
 
 def home(request):
     current_user = request.user
-    profile=Profile.objects.filter(user_id=request.user.id)
-    posts = Posts.get_posts()
-    title = "Neighborhoods"
 
-    return render(request,'everything/home.html', {"title":title, "posts":posts, "profile":profile})
+    try:
+        profile = Profile.objects.filter(user=request.user)
+        arr = []
+        for new in profile:
+            arr.append(new.neighbourhood.id)
+        id = arr[0]
+        posts=Posts.objects.filter(neighbourhood=id)
+    except Exception as e:
+        raise Http404()
+    
+    return render(request,'everything/home.html', {"posts":posts, "profile":profile})
 
 
 @login_required(login_url='/accounts/login/')
@@ -72,10 +79,18 @@ def profile(request):
 
 def businesses(request):
     current_user = request.user
-    businesses = Businesses.get_businesses()
-    title = "Neighborhoods Businesses"
+    try:
+        profile = Profile.objects.filter(user=request.user)
+        arr=[]
+        for biz in profile:
+            arr.append(biz.neighbourhood.id)
+        id=arr[0]
+        businesses=Businesses.objects.filter(business_neighbourhood=id)
+    except Exception as e:
+        raise Http404()
+        title = "Neighborhoods Businesses"
 
-    return render(request,'everything/businesses.html', {"title":title, "businesses":businesses})
+    return render(request,'everything/businesses.html', {"id":id, "businesses":businesses})
 
 
 @login_required(login_url='/accounts/login/')
