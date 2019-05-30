@@ -38,3 +38,8 @@
 .headstyle{
     font-family: 'Kaushan Script', cursive;
 }
+.imagebk{
+    /* background-repeat:no-repeat;
+    background-size: cover; */
+    background-color: rgba(95, 158, 160, 0.329)
+}

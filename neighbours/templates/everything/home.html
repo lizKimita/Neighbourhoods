@@ -6,11 +6,14 @@
 {%if user.is_authenticated%}
     {% if profile %}
     <div class="container" style="margin-top:10%">
+        <div>
+            <!-- <img src="https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2564,w_3000,x_0,y_485/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/01_globe_copy3_CMYK_FINAL_rev_zeeypn.jpg" alt="" style="width: 50%"> -->
+        </div>
         <div class="row">
             <div class="col-md-12">
             {% for new in posts%}
                 <div class="col-md-4" style="padding:1%">
-                    <div class="card">
+                    <div class="card" style="background-color:rgba(0, 128, 128, 0.219)">
                     <div style="margin:2%">
                         <br>
                         <p> <strong>{{new.title}} </strong></p>
@@ -28,9 +31,7 @@
             {% endfor %}
             </div>   
         </div>
-    
     </div>
-
     {% else %}
     <div class="container" style="margin-top:10%">
             <div class="jumbotron introjumbo">
@@ -45,11 +46,8 @@
                     <a style="font-size:15px;color: white" class='btn btn-outline-default' href="{%url 'NewProfile'%}" > CREATE PROFILE</a>
                 </div>
             </div>
-        </div>
-            
-        </div>
-        
-
+        </div>      
+        </div>  
 {% endif %}
 
 {% else %}
@@ -70,7 +68,6 @@
         </div>
     </div>
 </div>
-    
 </div>
 
 
