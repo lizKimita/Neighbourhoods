@@ -16,4 +16,4 @@ class NewProfileForm(forms.ModelForm):
 class NewBusinessForm(forms.ModelForm):
     class Meta:
         model = Businesses
-        exclude = ['user', 'neighbourhood_id']
+        exclude = ['user']

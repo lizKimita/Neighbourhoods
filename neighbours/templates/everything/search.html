@@ -4,21 +4,31 @@
     <div class="jumbotron">
   <div class="row">
     {% if businesses%}
-      <h2 style="text-decoration:underline">Found {{ businesses|length }} of searched term {{message}}</h2>
+      <h2 style="text-decoration:underline">Found {{ businesses|length }} of searched term "{{message}}"</h2>
     {% else %}
-      <h2> Found 0 projects for the search term {{message}}</h2>
+      <h2> Found 0 projects for the search term "{{message}}"</h2>
     {% endif %}
 
   </div>
-
+</div>
   {% if businesses %}
     {% for business in businesses %}
     
-    <h3> <a href="">{{business.business_name}}</a> </h3>
-
+    <div class="col-md-4" style="padding:1%">
+      <div class="card">
+      <div style="margin:2%">
+          <br>
+          <p> <strong>{{business.business_name}} </strong></p>
+          <hr>
+          <p> {{business.business_description}}</p>
+          <p style="float:right">{{business.business_email}}</p>
+              <p>Contact Person:{{business.contact_person}}</p>
+      </div>
+  </div>
+</div>
     {% endfor %}
   {% endif %}
   
-</div>
+
 </div>
 {% endblock %}
