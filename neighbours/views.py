@@ -10,10 +10,11 @@ from .models import Profile, Businesses, Posts
 
 def home(request):
     current_user = request.user
+    profile=Profile.objects.filter(user_id=request.user.id)
     posts = Posts.get_posts()
     title = "Neighborhoods"
 
-    return render(request,'everything/home.html', {"title":title, "posts":posts})
+    return render(request,'everything/home.html', {"title":title, "posts":posts, "profile":profile})
 
 
 @login_required(login_url='/accounts/login/')

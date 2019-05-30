@@ -3,30 +3,41 @@
 {% block content %}
     {{block.super}}
 
-<div class="container" style="margin-top:10%">
-    <div class="row">
-        <div class="col-md-12" >
-        {% for new in posts%}
-            <div class="col-md-4" style="padding:1%">
-                <div class="card">
-                <div style="margin:2%">
-                    <br>
-                    <p> <strong>{{new.title}} </strong></p>
-                    <hr>
-                    <p> {{new.post}}</p>
-                    <p style="float:right">{{new.pub_date}}</p>
-                        <p>By:{{new.profile}}</p>
+{%if user.is_authenticated%}
+    {% if profile %}
+    <div class="container" style="margin-top:10%">
+        <div class="row">
+            <div class="col-md-12" >
+            {% for new in posts%}
+                <div class="col-md-4" style="padding:1%">
+                    <div class="card">
+                    <div style="margin:2%">
+                        <br>
+                        <p> <strong>{{new.title}} </strong></p>
+                        <hr>
+                        <p> {{new.post}}</p>
+                        <p style="float:right">{{new.pub_date}}</p>
+                            <p>By:{{new.profile}}</p>
+                    </div>
                 </div>
             </div>
+                {% empty %}
+                <div class="row">
+                    <h2 class="text-center">There is no Posts yet!</h2>
+                </div>
+            {% endfor %}
+            </div>   
         </div>
-            {% empty %}
-            <div class="row">
-                <h2 class="text-center">There is no Posts yet!</h2>
-            </div>
-        {% endfor %}
-        </div>   
+    
     </div>
 
-</div>
-    
+    {% else %}
+<p style="margin-top:10%">create a profile to see the lastest neighorhood highlights</p>
+{% endif %}
+
+{% else %}
+ <p style="margin-top:10%">signup/ register</p>
+
+{%  endif %}
+
 {% endblock %}

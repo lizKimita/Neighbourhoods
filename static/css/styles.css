@@ -19,15 +19,13 @@
 .newdata{
     text-align: center;
     font-size: 250%;
-    /* font-family: 'Pacifico', cursive; */
-    /* font-family: 'Acme', sans-serif; */
-    /* font-family: 'Satisfy', cursive; */
-    /* font-family: 'Courgette', cursive; */
-    /* font-family: 'Kaushan Script', cursive; */
-    font-family: 'Great Vibes', cursive;
-    /* font-family: 'Cookie', cursive;
-    font-family: 'Merienda', cursive;
-    font-family: 'Marck Script', cursive;
-    font-family: 'Gochi Hand', cursive;
-    font-family: 'Yellowtail', cursive; */
+    font-family: 'Lobster', cursive;
+    /* font-family: 'Pacifico', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Satisfy', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Lobster Two', cursive;
+    font-family: 'Kalam', cursive; */
 }
