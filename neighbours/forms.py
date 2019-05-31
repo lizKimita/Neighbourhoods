@@ -17,3 +17,5 @@ class NewBusinessForm(forms.ModelForm):
     class Meta:
         model = Businesses
         exclude = ['user']
+
+
