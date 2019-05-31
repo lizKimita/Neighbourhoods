@@ -25,6 +25,25 @@ def home(request):
     return render(request,'everything/home.html', {"posts":posts, "profile":profile})
 
 
+def businesses(request):
+    current_user = request.user
+    try:
+        profile = Profile.objects.filter(user=request.user)
+        arr=[]
+        for biz in profile:
+            arr.append(biz.neighbourhood.id)
+        if len(arr)>0:
+            id=arr[0]
+            businesses=Businesses.objects.filter(business_neighbourhood=id)
+        else:
+            businesses=Businesses.objects.filter(business_neighbourhood=10000000000)
+    except Exception as e:
+        raise Http404()
+        
+        title = "Neighborhoods Businesses"
+
+    return render(request,'everything/businesses.html', {"id":id, "businesses":businesses})
+
 @login_required(login_url='/accounts/login/')
 def new_post(request):
     current_user = request.user
@@ -78,20 +97,7 @@ def profile(request):
 
     return render(request,'profile.html',{ 'profile':profile,'posts':posts,'current_user':current_user})
 
-def businesses(request):
-    current_user = request.user
-    try:
-        profile = Profile.objects.filter(user=request.user)
-        arr=[]
-        for biz in profile:
-            arr.append(biz.neighbourhood.id)
-        id=arr[0]
-        businesses=Businesses.objects.filter(business_neighbourhood=id)
-    except Exception as e:
-        raise Http404()
-        title = "Neighborhoods Businesses"
 
-    return render(request,'everything/businesses.html', {"id":id, "businesses":businesses})
 
 
 @login_required(login_url='/accounts/login/')
