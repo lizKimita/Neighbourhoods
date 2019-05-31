@@ -49,6 +49,9 @@ class Businesses(models.Model):
     business_email = models.EmailField()
 
 
+    def __str__(self):
+        return self.business_name
+
     def save_business(self):
         self.save()
 
