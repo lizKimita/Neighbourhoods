@@ -4,7 +4,7 @@
 
 #### By **Elizabeth Wanjiku Kimita**
 
-<img src="" height=350>
+<img src="static/images/neighbourhood.png" height=350>
 
 ## Description
 This is an application that allows neighbours to be on the know when it comes to the events, activities, announcements, businesses and anything that could be happening in their neighbourhoods. Neighbours can create posts, list their businesses, see their neighbours posts and businesses and even search for businesses in other neighbourhoods.
