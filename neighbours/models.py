@@ -8,6 +8,14 @@ class NeighbourHood(models.Model):
     neighbourhood_location = models.CharField(max_length = 100)
     occupants_count = models.IntegerField()
 
+
+    def save_neighborhood(self):
+        self.save()
+
+    def delete_neighborhood(self):
+        self.delete()   
+
+
     def __str__(self):
         return self.neighbourhood_name
 
@@ -107,3 +115,7 @@ class Posts(models.Model):
 
     class Meta:
         ordering = ['-id']
+
+    
+    def __str__(self):
+        return self.title
