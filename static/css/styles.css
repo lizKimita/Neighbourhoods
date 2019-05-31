@@ -43,3 +43,20 @@
     background-size: cover; */
     background-color: rgba(95, 158, 160, 0.329)
 }
+.slogan{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.5em;
+    text-decoration: underline;
+}
+#borderid{
+    border-width: 3px !important;
+}
+.heading{
+    font-family: 'Kaushan Script', cursive;
+    font-size:20px;
+}
+.contacts{
+    font-family: 'Kaushan Script', cursive;
+    font-size:40px;
+    text-decoration: underline;
+}
